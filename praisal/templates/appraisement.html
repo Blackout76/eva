@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Appraisement view{% endblock %}
+{% block content %}
+{% load static %}
+<h1>Appraisement N°{{ appraisement.code }}</h1>
+<p>Content: {{ appraisement.content }}.</p>
+<a href="{% url "create_praisal" %}">Create new appraisement!</a>
+{% endblock %}
