@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from praisal.models import Appraisement
 from .forms.PraisalForm import PraisalForm, AppraisementForm
+from .parser import parse
+import evepaste
 
 def appraisement(request, code_praisal):
 	""" 
@@ -22,13 +24,22 @@ def praisal(request):
 		minerals_mode = form_items.cleaned_data['minerals_mode']
 
 		# Parse content
-		parsed_content = content
+		try:
+			parsed_content = parse(content)
+		except evepaste.Unparsable as ex:
+			#if raw_paste:
+			#	app.logger.warning("User input invalid data: %s", raw_paste)
+			#return render_template('error.html', error='Error when parsing input: ' + str(ex))
+			return render(request, 'praisal.html', locals())
 
 		# Appraise content
 		appraisal_content = parsed_content
 
 		# Create apparaisement
-		new_appraisement = Appraisement(content=appraisal_content)
+		new_appraisement = Appraisement(
+			parsed_items=parsed_content['results'],
+			representative_kind=parsed_content['representative_kind'],
+			bad_lines=parsed_content['bad_lines'])
 		new_appraisement.save()
 
 		# Redirect

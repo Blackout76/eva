@@ -3,6 +3,6 @@
 {% block content %}
 {% load static %}
 <h1>Appraisement N°{{ appraisement.code }}</h1>
-<p>Content: {{ appraisement.content }}.</p>
+<p>Content: {{ appraisement.parsed_items }}.</p>
 <a href="{% url "praisal" %}">Create new appraisement!</a>
 {% endblock %}

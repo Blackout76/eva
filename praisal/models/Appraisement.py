@@ -1,11 +1,16 @@
 from django.db import models
 import random
 import string
+from jsonfield import JSONField
 
 class Appraisement(models.Model):
 	code = models.TextField(null=False, max_length=8, unique=True)
-	content = models.TextField(null=False)
-	created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="parution date")
+	parsed_items = JSONField(default={})
+	bad_lines = JSONField(default={})
+	prices = JSONField(default={})
+	representative_kind = models.TextField(default='unknown')
+	created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="created date")
+
 
 	def __str__(self):
 		return self.code
