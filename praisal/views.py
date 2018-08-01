@@ -5,6 +5,12 @@ from .forms.PraisalForm import PraisalForm, AppraisementForm
 from .parser import parse
 import evepaste
 
+def home(request):
+	""" 
+	Home view
+	"""
+	return render(request, 'index.html')
+
 def appraisement(request, code_praisal):
 	""" 
 	View to an appraisement

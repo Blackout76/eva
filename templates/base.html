@@ -1,22 +1,73 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="fr">
 <head>
-   <link rel="stylesheet" href="/media/css/style.css" />
-   <title>{% block title %}EvE smart market{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}EvE online extra tools{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/creative.min.css' %}" rel="stylesheet">
+
 </head>
-<body>
-<header>The header</header>
-    <nav>
-       {% block nav %}
-       <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/praisal/">Praisal</a></li>
-       </ul>
-       {% endblock %}
-   </nav>
-   <section id="content">
-       {% block content %}{% endblock %}
-   </section>
+<body id="page-top">
+    <!-- Navigation -->
+    {% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">EvA</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#evaluate-about">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                <a class="dropdown-item" href="/praisal/">Estimate items</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% endblock %}
+    <!-- Block content -->
+    {% block content %}{% endblock %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/scrollreveal/scrollreveal.min.j' %}s"></script>
+    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
 <footer>&copy; The footer</footer>
 </body>
 </html>

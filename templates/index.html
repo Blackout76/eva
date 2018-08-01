@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+  <div class="container my-auto">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+    <h1 class="text-uppercase">
+      <strong>Eve online evaluate tool</strong>
+    </h1>
+    <hr>
+    </div>
+    <div class="col-lg-8 mx-auto">
+    <p class="text-faded mb-5">Using this evaluate tool can help you to sell better and faster content in Eve Online!</p>
+    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#evaluate-about">Find Out More</a>
+    <a class="btn btn-primary btn-xl js-scroll-trigger" href="/praisal/">Get started</a>
+    </div>
+  </div>
+  </div>
+</header>
+
+<section id="evaluate-about">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+    <h2 class="section-heading">How does it work?</h2>
+    <hr class="my-4">
+    </div>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 text-center">
+    <div class="service-box mt-5 mx-auto">
+      <i class="fa fa-4x fa-cubes text-primary mb-3 sr-icons"></i>
+      <h3 class="mb-3">Get content</h3>
+      <p class="text-muted mb-0">Copy your eve online items and paste it inside the evaluate tool. You can copy items from inventories such as containers, industry, contracts and more!</p>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 text-center">
+    <div class="service-box mt-5 mx-auto">
+      <i class="fa fa-4x fa-cogs text-primary mb-3 sr-icons"></i>
+      <h3 class="mb-3">Parse content</h3>
+      <p class="text-muted mb-0">The evaluate tool will transform data into JSON data content in order to be simplify next process of the evalute tool.</p>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 text-center">
+    <div class="service-box mt-5 mx-auto">
+      <i class="fa fa-4x fa-money text-primary mb-3 sr-icons"></i>
+      <h3 class="mb-3">Estimate values</h3>
+      <p class="text-muted mb-0">The evalute tool use the Eve Online ESI API tool to get the current price of each item. You can choice the Eve Online region base cost for estimations.</p>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-6 text-center">
+    <div class="service-box mt-5 mx-auto">
+      <i class="fa fa-4x fa-balance-scale text-primary mb-3 sr-icons"></i>
+      <h3 class="mb-3">Apply formula patterns</h3>
+      <p class="text-muted mb-0"></p>
+    </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock %}
